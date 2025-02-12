@@ -1,0 +1,28 @@
+﻿@model CircleWebApp.Models.CircleResult
+
+@{
+    ViewData["Title"] = "Kết quả tính toán";
+}
+
+<h2>Kết quả</h2>
+
+<dl class="dl-horizontal">
+    <dt>Chu vi:</dt>
+    <dd>@Model.ChuVi.ToString("0.00") cm</dd>
+
+    <dt>Diện tích:</dt>
+    <dd>@Model.DienTich.ToString("0.00") cm²</dd>
+
+    <dt>Đường kính:</dt>
+    <dd>@Model.DuongKinh.ToString("0.00") cm</dd>
+</dl>
+
+<!-- Phần hiển thị dữ liệu từ Web API -->
+<div>
+    <h2>Dữ liệu từ Web API:</h2>
+    <p>Diện tích: <span id="dien_tich">@Model.DienTich.ToString("0.00")</span> cm²</p>
+    <p>Chu vi: <span id="chu_vi">@Model.ChuVi.ToString("0.00")</span> cm</p>
+    <p>Đường kính: <span id="duong_kinh">@Model.DuongKinh.ToString("0.00")</span> cm</p>
+</div>
+
+<a asp-action="Index" class="btn btn-secondary">Quay lại</a>

@@ -1,0 +1,16 @@
+﻿@{
+    ViewData["Title"] = "Tính toán hình tròn";
+}
+
+<h2>Nhập bán kính</h2>
+<form asp-action="Calculate" method="post">
+    <div class="form-group">
+        <label>Bán kính:</label>
+        <input type="number" step="any" name="radius" class="form-control" required />
+        @if (ViewBag.Error != null)
+        {
+            <span class="text-danger">@ViewBag.Error</span>
+        }
+    </div>
+    <button type="submit" class="btn btn-primary">Tính toán</button>
+</form>
